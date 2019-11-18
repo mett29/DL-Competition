@@ -1,0 +1,3 @@
+[submodule "DL-CompetitionsDatasets"]
+	path = DL-CompetitionsDatasets
+	url = https://github.com/DanieleParravicini/DL-CompetitionsDatasets
