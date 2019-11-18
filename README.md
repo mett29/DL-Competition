@@ -1,0 +1,1 @@
+# Project for the 'Artificial Neural Networks and Deep Learning' course (2019/2020)
