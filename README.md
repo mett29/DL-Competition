@@ -28,7 +28,21 @@ Artificial Neural Networks have shown impressing results in a broad range of app
    [to the Kaggle competition](https://www.kaggle.com/c/ann-and-dl-image-segmentation); [notebook](./image_segmentation.ipynb)
 
 3. ### Visual question answering 
-
-  
+   This was the most difficult challenge we faced. In this task the network takes two inputs: i) a synthetic scene in which are presented several objects with different geometric shapes and/or finishes (colour, material) ii) and a question about the existence of something in the scene (e.g., Is there a yellow thing?') or about counting (e.g., How many big objects are there?'). The network has to produce a suitable answer by choosing between a set of predefined sentence: yes, no, 0, 1, ..., 9. So in a certain sense, it can be seen as a classification problem. 
+   
+   An example.
+   |----|   
+   | ![example](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F3311561%2F25ee0570e55dd0f702a2c07887453269%2Fvqa_ex1.png?generation=1576719696601958&alt=media) |
+   | Q: What number of other matte objects are the same shape as the small rubber object? |
+   | A: 1 |
+    
+   Even if the challenge was a subset of [CLEVR](https://cs.stanford.edu/people/jcjohns/clevr/), the dataset was huge : more than 12 GB. 
+   As a consequence, the first thing we did was to accelerate the training procedure (a batch of 64 elements took 2 seconds to be processed). After reading [A simple neural network module for relational reasoning](https://arxiv.org/pdf/1706.01427.pdf), it became clear that the task could be solved using images with lower resolution. In this way, we were able to reduce by around 8 times the time taken to process a batch and this allows to exploit more efficient caching mechanisms.
+   
+   The basic architecture that we used was a combination of three NNs. A CNN processed the image, while embedding + LSTM examined the question. The two outputs were then transformed by a dense layer to output a 1-hot encoded answer.
+   
+   We have tried several approach: tackling with different networks counting and boolean questions, GRU, different pre-trained feature extractors, pretrained word embedding, attention mechanisms and we designed a custom data generator to provide evenly distributed batches.
+   
    For more information on the competition or in the techniques applied take a look on the two links below.
-   [to the Kaggle competition](https://www.kaggle.com/c/ann-and-dl-vqa) [noptebook](./question_answering.ipynb)
+
+   [to the Kaggle competition](https://www.kaggle.com/c/ann-and-dl-vqa); [notebook](./question_answering.ipynb) 
