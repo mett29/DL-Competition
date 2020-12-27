@@ -1,7 +1,22 @@
 # Repo for the 'Artificial Neural Networks and Deep Learning' course (2019/2020)
 
 This repository contains the python notebooks that were employed in 3 Kaggle challenges that were proposed during the course.
+The datasets that were used in each of the challenge are contained in a separate repo which is imported as a submodule.
 Artificial Neural Networks have shown impressing results in a broad range of application domains. The challenges are nothing else than a set of problems taken from image processing. The order in which they were presented was set to progressively increase the complexity of the tasks.
+
+The repo is organzed as follow:
+ 
+[DL-CompetitionsDatasets](DL-CompetitionsDatasets),       contains the datasets;
+
+[dataSetStatistics.py](dataSetStatistics.py),             was used to evaluate some characteristics of the datasets;
+
+[image_classification.ipynb](image_classification.ipynb), python notebook for the first  challenge;
+
+[image_segmentation.ipynb](image_segmentation.ipynb),     python notebook for the second challenge;
+
+[question_answering.ipynb](question_answering.ipynb),     python notebook for the third  challenge;
+
+[resize_on_disk.ipynb](resize_on_disk.ipynb),             python notebook to transform the dataset of the third challenge;
 
 ## The challenges 
 
