@@ -1,6 +1,7 @@
 # Repo for the 'Artificial Neural Networks and Deep Learning' course (2019/2020)
 
-This repository contains the python notebooks that were employed in 3 Kaggle challenges that were proposed during the course.
+This repository contains the final python notebooks that were employed in 3 Kaggle challenges that were proposed during the course.
+We have exploited Colab and Kaggle servers to train our models. Since they offer the possibility to keep track of the file history, sometimes we didn't remember to update this repository and therefore you might miss some intermediate modification we have made on the files.
 The datasets that were used in each of the challenge are contained in a separate repo which is imported as a submodule.
 Artificial Neural Networks have shown impressing results in a broad range of application domains. The challenges are nothing else than a set of problems taken from image processing. The order in which they were presented was set to progressively increase the complexity of the tasks.
 
